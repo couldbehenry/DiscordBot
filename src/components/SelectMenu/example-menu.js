@@ -1,5 +1,6 @@
 const DiscordBot = require("../../client/DiscordBot");
 const Component = require("../../structure/Component");
+const { MessageFlags } = require("discord.js");
 
 module.exports = new Component({
     customId: 'example-menu-id',
@@ -13,7 +14,7 @@ module.exports = new Component({
 
         await interaction.reply({
             content: 'Replied from a Select Menu interaction! (You selected **' + interaction.values[0] + '**).',
-            ephemeral: true
+            flags: MessageFlags.Ephemeral
         });
 
     }

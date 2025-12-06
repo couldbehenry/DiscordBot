@@ -1,4 +1,4 @@
-const { UserContextMenuCommandInteraction } = require("discord.js");
+const { UserContextMenuCommandInteraction, MessageFlags } = require("discord.js");
 const DiscordBot = require("../../client/DiscordBot");
 const ApplicationCommand = require("../../structure/ApplicationCommand");
 
@@ -34,7 +34,7 @@ module.exports = new ApplicationCommand({
 
         await interaction.reply({
             content: array.join('\n'),
-            ephemeral: true
+            flags: MessageFlags.Ephemeral
         });
     }
 }).toJSON();
